@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class AuctionController extends Controller
 {
@@ -90,6 +91,7 @@ class AuctionController extends Controller
             $auction->maximumestimatedprice = Input::get('maximumestimatedprice');
             $auction->buyoutprice = Input::get('buyoutprice');
             $auction->enddate = Input::get('enddate');
+            $auction->userid = Auth::id();
             $auction->save();
             // redirect
             Session::flash('message', 'Auction succesfully added!');
