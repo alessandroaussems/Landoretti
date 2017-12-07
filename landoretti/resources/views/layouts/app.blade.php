@@ -47,7 +47,7 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                                <li><a href="{{ route('register') }}">Auctions</a></li>
+                                <li><a href="{{ url('auctions') }}">Auctions</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -58,7 +58,7 @@
                                         <a href="#">Starred Auctions</a>
                                     </li>
                                     <li>
-                                        <a href="#">My Auctions</a>
+                                        <a href="{{route("myauctions")}}">My Auctions</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
