@@ -77,12 +77,6 @@
             <input type="file" name="image" id="image" class="required">
         </div>
 
-        <div class="form-group">
-
-            {{ Form::checkbox('conditionsaccepted', 'false')}}
-            Accept the conditions
-        </div>
-
 
         {{ Form::submit('Edit auction', array('class' => 'btn btn-primary')) }}
 

@@ -24,3 +24,6 @@ Route::get('/myauctions', 'AuctionController@myauctions')->name('myauctions');
 Route::get('starredauctions','StarredAuctionController@showstarredAuctions');
 Route::get('auctions/{id}/star','StarredAuctionController@star');
 Route::get('auctions/{id}/unstar','StarredAuctionController@unstar');
+
+Route::get('auctionbidding/{id}',"BiddingController@showbiddingForm");
+Route::post('addbidding',"BiddingController@doBidding");

@@ -17,4 +17,5 @@
     <p>Enddate: {{$auction->enddate}}</p>
     <a href="./{{$auction->id}}/star" class="btn btn-success">Star!</a>
     <a href="./{{$auction->id}}/unstar" class="btn btn-success">Unstar!</a>
+    <a href="../auctionbidding/{{$auction->id}}" class="btn btn-primary">Bid!</a>
 @endsection

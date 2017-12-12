@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Bidding extends Model
 {
     protected $table = 'biddings';
+    public $timestamps=false;
 }
