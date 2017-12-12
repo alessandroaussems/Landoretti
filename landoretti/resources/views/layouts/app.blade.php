@@ -61,6 +61,9 @@
                                         <a href="{{route("myauctions")}}">My Auctions</a>
                                     </li>
                                     <li>
+                                        <a href="{{url("auctions/create")}}">Create Auction</a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

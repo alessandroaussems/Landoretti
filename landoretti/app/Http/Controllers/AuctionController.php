@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Auction;
+use App\Starred;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
@@ -116,7 +117,19 @@ class AuctionController extends Controller
             ->select('users.name', 'biddings.biddingprice')
             ->where("auctionid",$id)
             ->get();
-        return view("auctiondetail")->with('auction',$auction)->with("biddings",$biddings);
+        $star = Starred::where([
+            'auctionid' => $id,
+            'userid' => Auth::id(),
+        ])->first();
+        if ($star==NULL)
+        {
+            $isalreadystarred=false;
+        }
+        else
+        {
+            $isalreadystarred=true;
+        }
+        return view("auctiondetail")->with('auction',$auction)->with("biddings",$biddings)->with("alreadystarred",$isalreadystarred);
     }
 
     /**

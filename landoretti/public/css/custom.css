@@ -1,4 +1,19 @@
+body {
+  overflow-x: hidden; }
+
 .auctionimage {
   width: 200px; }
+
+.auction {
+  text-align: center;
+  border: 1px solid black;
+  padding-bottom: 5px; }
+
+.imagecol {
+  margin-left: 375px; }
+
+.comments {
+  display: block;
+  margin-left: 325px; }
 
 /*# sourceMappingURL=custom.css.map */
