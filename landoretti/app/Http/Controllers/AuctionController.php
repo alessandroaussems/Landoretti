@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
+use App\Bidding;
 use Carbon\Carbon;
 
 class AuctionController extends Controller
@@ -110,7 +111,12 @@ class AuctionController extends Controller
     public function show($id)
     {
         $auction = Auction::where("id",$id)->first();
-        return view("auctiondetail")->with('auction',$auction);
+        $biddings=Bidding::
+        join('users', 'userid', '=', 'users.id')
+            ->select('users.name', 'biddings.biddingprice')
+            ->where("auctionid",$id)
+            ->get();
+        return view("auctiondetail")->with('auction',$auction)->with("biddings",$biddings);
     }
 
     /**
