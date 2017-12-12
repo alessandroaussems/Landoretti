@@ -121,7 +121,8 @@ class AuctionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $auction = Auction::where("id",$id)->first();
+        return view("editauction")->with('auction',$auction);
     }
 
     /**
@@ -133,7 +134,58 @@ class AuctionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // validate
+        // read more on validation at http://laravel.com/docs/validation
+        $rules = array(
+            'title'      => 'required',
+            'style'     => 'required' ,
+            'year'       => 'required',
+            'description'=> 'required',
+            'width' => 'required',
+            'height' => 'required',
+            'depth' => 'required',
+            'condition' => 'required',
+            'origin' => 'required',
+            'image'      => 'required|image',
+            'minimumestimatedprice' => 'required',
+            'maximumestimatedprice' => 'required',
+            'buyoutprice' => 'required',
+            'enddate' => 'required',
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return Redirect::to('auctions/'.$id.'edit')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        else {
+            $image = $request->file('image');
+            $photoName = Input::get('title') . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('img/'), $photoName);
+
+            $auction = Auction::find($id);
+            $auction->title = Input::get('title');
+            $auction->style = Input::get('style');
+            $auction->year = Input::get('year');
+            $auction->description = Input::get('description');
+            $auction->width = Input::get('width');
+            $auction->height = Input::get('height');
+            $auction->depth = Input::get('depth');
+            $auction->condition = Input::get('condition');
+            $auction->origin= Input::get('origin');
+            $auction->photo1 = $photoName;
+            $auction->minimumestimatedprice = Input::get('minimumestimatedprice');
+            $auction->maximumestimatedprice = Input::get('maximumestimatedprice');
+            $auction->buyoutprice = Input::get('buyoutprice');
+            $auction->enddate = Input::get('enddate');
+            $auction->userid = Auth::id();
+            $auction->save();
+            // redirect
+            Session::flash('message', 'Auction succesfully changed!');
+            return Redirect::to('/auctions/'.$id);
+        }
     }
 
     /**
@@ -144,7 +196,10 @@ class AuctionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete
+        $auction = Auction::find($id);
+        $auction->delete();
+        return Redirect::to('myauctions');
     }
     public function  myauctions()
     {
