@@ -55,7 +55,7 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="#">Starred Auctions</a>
+                                        <a href="{{url("starredauctions")}}">Starred Auctions</a>
                                     </li>
                                     <li>
                                         <a href="{{route("myauctions")}}">My Auctions</a>

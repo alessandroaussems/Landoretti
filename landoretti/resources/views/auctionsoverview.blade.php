@@ -23,7 +23,8 @@
             <td>{{$value->style}}</td>
             <td>{{$value->title}}</td>
             <td>{{$length}}</td>
-            <td><a href="./auctions/{{$value->id}}" class="btn btn-primary">More information!</a></td>
+            <td><a href="./auctions/{{$value->id}}" class="btn btn-primary">More information!</a>
+            </td>
         </tr>
         @endforeach
         </tbody>

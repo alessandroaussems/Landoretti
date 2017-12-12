@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <h1>Your Auctions:</h1>
     <table class="table table-bordered">
         <thead>
         <tr>

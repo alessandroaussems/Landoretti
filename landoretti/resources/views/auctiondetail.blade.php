@@ -15,4 +15,6 @@
     <p>Maxmimumprice: {{$auction->maximumestimatedprice}}</p>
     <p>Buyoutprice: {{$auction->buyoutprice}}</p>
     <p>Enddate: {{$auction->enddate}}</p>
+    <a href="./{{$auction->id}}/star" class="btn btn-success">Star!</a>
+    <a href="./{{$auction->id}}/unstar" class="btn btn-success">Unstar!</a>
 @endsection
