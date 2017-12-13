@@ -79,7 +79,7 @@
 
         <div class="form-group">
 
-            {{ Form::checkbox('conditionsaccepted', 'false')}}
+            {{ Form::checkbox('conditionsaccepted', 'conditionsaccepted')}}
             Accept the conditions
         </div>
 
