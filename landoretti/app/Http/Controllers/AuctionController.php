@@ -26,7 +26,7 @@ class AuctionController extends Controller
     }
     public function index()
     {
-        $auctions = Auction::all();
+        $auctions = Auction::where("isactive",1)->get();
         return view("auctionsoverview")->with('auctions',$auctions);
     }
 
@@ -120,7 +120,10 @@ class AuctionController extends Controller
      */
     public function show($id)
     {
-        $auction = Auction::where("id",$id)->first();
+        $auction = Auction::where([
+            'id' => $id,
+            'isactive' => 1,
+        ])->first();
         $biddings=Bidding::
         join('users', 'userid', '=', 'users.id')
             ->select('users.name', 'biddings.biddingprice')
@@ -149,7 +152,11 @@ class AuctionController extends Controller
      */
     public function edit($id)
     {
-        $auction = Auction::where("id",$id)->first();
+        $auction = Auction::where([
+            'id' => $id,
+            'isactive' => 1,
+            'userid' => Auth::id()
+        ])->first();
         return view("editauction")->with('auction',$auction);
     }
 
@@ -225,13 +232,21 @@ class AuctionController extends Controller
     public function destroy($id)
     {
         // delete
-        $auction = Auction::find($id);
-        $auction->delete();
+        $auction = Auction::where([
+            'id' => $id,
+            'isactive' => 1,
+            'userid' => Auth::id()
+        ])->first();
+        $auction->isactive=0;
+        $auction->save();
         return Redirect::to('myauctions');
     }
     public function  myauctions()
     {
-        $auctions = Auction::where("userid",Auth::id())->get();
+        $auctions = Auction::where([
+            'isactive' => 1,
+            'userid' => Auth::id()
+        ])->get();
         return view("myauctions")->with('auctions',$auctions);
     }
 }
