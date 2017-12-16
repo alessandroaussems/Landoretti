@@ -25,8 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('auctions:disable')->dailyAt('22:59'); // because we are in brussels time + 1H so this will execute on 23:59
     }
 
     /**
