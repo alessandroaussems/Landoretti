@@ -23,6 +23,7 @@
             <a href="./{{$auction->id}}/star" class="btn btn-success">Star!</a>
             @endif
             <a href="../auctionbidding/{{$auction->id}}" class="btn btn-primary">Bid!</a>
+            <a href="../auctionbuynow/{{$auction->id}}" class="btn btn-primary">BUY NOW!</a>
         </div>
     </div>
     <div class="container comments">

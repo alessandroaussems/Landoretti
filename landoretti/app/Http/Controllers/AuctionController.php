@@ -249,4 +249,15 @@ class AuctionController extends Controller
         ])->get();
         return view("myauctions")->with('auctions',$auctions);
     }
+    public function buyNow($id)
+    {
+        // delete
+        $auction = Auction::where([
+            'id' => $id,
+            'isactive' => 1,
+        ])->first();
+        $auction->isactive=0;
+        $auction->save();
+        return view("thankyou");
+    }
 }

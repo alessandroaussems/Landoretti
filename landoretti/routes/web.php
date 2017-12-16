@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 Route::resource('auctions', 'AuctionController');
 Route::get('/myauctions', 'AuctionController@myauctions')->name('myauctions');
+Route::get('auctionbuynow/{id}',"AuctionController@buyNow");
 
 Route::get('starredauctions','StarredAuctionController@showstarredAuctions');
 Route::get('auctions/{id}/star','StarredAuctionController@star');
