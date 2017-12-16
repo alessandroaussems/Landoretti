@@ -8,7 +8,7 @@
         @foreach($auctions as $key => $value)
             <?php
             $end = \Carbon\Carbon::parse($value->enddate);
-            $now = \Carbon\Carbon::now();
+            $now = \Carbon\Carbon::today();
             $length = $end->diffInDays($now);
             ?>
                 <div class="col-sm-4 auction">
