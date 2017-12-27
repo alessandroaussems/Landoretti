@@ -39,7 +39,8 @@
         </ul>
         <h3>Endings</h3>
         <ul class="style">
-            <li></li>
+            <li><a href="{{url("auctions/ending/thisweek")}}">Ending This Week</a></li>
+            <li><a href="{{url("auctions/ending/purchasenow")}}">Purchase Now</a></li>
         </ul>
     </div>
     <div class="row">

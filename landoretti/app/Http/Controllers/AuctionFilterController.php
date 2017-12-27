@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Auction;
 
@@ -83,5 +84,24 @@ class AuctionFilterController extends Controller
             ->where('year',  "<=",  $max)
             ->get();
         return view("auctionsoverview")->with('auctions',$auctions);
+    }
+    public function ending($ending)
+    {
+        if($ending=="thisweek")
+        {
+            $auctions = Auction::where("isactive",1)
+                ->where('enddate',  ">=",  Carbon::today())
+                ->where('enddate',  "<=",  Carbon::now()->addDays(7))
+                ->get();
+            return view("auctionsoverview")->with('auctions',$auctions);
+        }
+        if($ending=="purchasenow")
+        {
+            $auctions = Auction::where("isactive",1)
+                ->where('enddate',  ">=",  Carbon::today())
+                ->where('enddate',  "<=",  Carbon::now()->addDays(1))
+                ->get();
+            return view("auctionsoverview")->with('auctions',$auctions);
+        }
     }
 }
