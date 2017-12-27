@@ -104,6 +104,7 @@ class AuctionController extends Controller
             $auction->enddate = Input::get('enddate');
             $auction->conditionsaccepted= $conditionsaccepted;
             $auction->userid = Auth::id();
+            $auction->status="active";
             $auction->save();
             // redirect
             Session::flash('message', 'Auction succesfully added!');
@@ -244,7 +245,6 @@ class AuctionController extends Controller
     public function  myauctions()
     {
         $auctions = Auction::where([
-            'isactive' => 1,
             'userid' => Auth::id()
         ])->get();
         return view("myauctions")->with('auctions',$auctions);

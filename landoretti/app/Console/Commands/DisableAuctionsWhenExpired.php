@@ -48,11 +48,11 @@ class DisableAuctionsWhenExpired extends Command
             if(Carbon::parse($value->enddate)==Carbon::today())
             {
                 $value->isactive=0;
-                $value->save();
                 $biddings=Bidding::where("auctionid",$value->id)->orderBy('biddingprice', 'DESC')->get();
-                if($biddings != array())
+                echo $biddings;
+                if(count($biddings) > 0)
                 {
-
+                    echo "TR";
                     $userwithhighestbidding=User::where("id",$biddings[0]->userid)->get();
                     $userfromauction=User::where("id",$value->userid)->get();
                     $messagetoauctionowner = new Message();
@@ -65,7 +65,20 @@ class DisableAuctionsWhenExpired extends Command
                     $messagetohighestbidder->userid=$userwithhighestbidding[0]->id;
                     $messagetohighestbidder->save();
 
+                    $value->status="sold";
+
                 }
+                else
+                {
+                    $userfromauction=User::where("id",$value->userid)->get();
+                    $messagetoauctionowner = new Message();
+                    $messagetoauctionowner->message = "Uw veiling " . $value->title . " is verlopen! Niemand heeft ze gekocht!";
+                    $messagetoauctionowner->userid=$userfromauction[0]->id;
+                    $messagetoauctionowner->save();
+
+                    $value->status="expired";
+                }
+                $value->save();
             }
         }
     }

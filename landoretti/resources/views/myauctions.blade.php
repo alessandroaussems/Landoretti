@@ -7,6 +7,7 @@
         <tr>
             <th>Image</th>
             <th>Title</th>
+            <th>Status</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -15,6 +16,7 @@
             <tr>
                 <td><img class="auctionimage" src="{{asset('/img').'/'.$value->photo1}}" alt="{{$value->title}}" title="{{$value->title}}"></td>
                 <td>{{$value->title}}</td>
+                <td>{{$value->status}}</td>
                 <td>
                     <a href="./auctions/{{$value->id}}" class="btn btn-primary">More information!</a>
                     <a href="./auctions/{{$value->id}}/edit" class="btn btn-primary">Edit</a>
