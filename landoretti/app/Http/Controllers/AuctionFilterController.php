@@ -49,4 +49,11 @@ class AuctionFilterController extends Controller
             ->get();
         return view("auctionsoverview")->with('auctions',$auctions);
     }
+    public function style($stylesort)
+    {
+        $auctions = Auction::where("isactive",1)
+            ->where('style',$stylesort)
+            ->get();
+        return view("auctionsoverview")->with('auctions',$auctions);
+    }
 }

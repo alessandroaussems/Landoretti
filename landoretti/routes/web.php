@@ -32,3 +32,4 @@ Route::post('addbidding',"BiddingController@doBidding");
 Route::get("/messages","MessageController@index");
 
 Route::get("/auctions/price/{category}","AuctionFilterController@price");
+Route::get("/auctions/style/{stylesort}","AuctionFilterController@style");

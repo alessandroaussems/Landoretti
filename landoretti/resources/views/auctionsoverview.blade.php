@@ -7,7 +7,18 @@
     <div class="filters">
         <h3>Style</h3>
         <ul class="style">
-            <li></li>
+            <li><a href="{{url("auctions/style/abstract")}}">Abstract</a></li>
+            <li><a href="{{url("auctions/style/africanamerican")}}">African American</a></li>
+            <li><a href="{{url("auctions/style/asiancontemporary")}}">Asian Contemporary</a></li>
+            <li><a href="{{url("auctions/style/conceptual")}}">Conceptual</a></li>
+            <li><a href="{{url("auctions/style/contemporary")}}">Contemporary</a></li>
+            <li><a href="{{url("auctions/style/emergingartists")}}">Emerging Artists</a></li>
+            <li><a href="{{url("auctions/style/middleeastcontemporary")}}">Middle East Contemporary</a></li>
+            <li><a href="{{url("auctions/style/minimalism")}}">Minimalism</a></li>
+            <li><a href="{{url("auctions/style/modern")}}">Modern</a></li>
+            <li><a href="{{url("auctions/style/pop")}}">Pop</a></li>
+            <li><a href="{{url("auctions/style/urban")}}">Urban</a></li>
+            <li><a href="{{url("auctions/style/vintagephotographs")}}">Vintage Photographs</a></li>
         </ul>
         <h3>Price</h3>
         <ul class="style">
