@@ -13,8 +13,21 @@
         </div>
 
         <div class="form-group">
-            {{ Form::label('style', 'Style',array('class' => 'required'))  }}
-            {{ Form::text('style', Input::old('style'), array('class' => 'form-control')) }}
+            {{ Form::label('style', 'Style',array('class' => 'required'))  }}<br>
+            {{Form::select('style', array(
+            'abstract' => 'Abstract',
+            'africanamerican' => 'African American',
+            'asiancontemporary' => 'Asian Contemporary',
+            'conceptual' => 'Conceptual',
+            'contemporary' => 'Contemporary',
+            'emergingartists' => 'Emerging Artists',
+            'middleeastcontemporary' => 'Middle East Contemporary',
+            'minimalism' => 'Minimalism',
+            'modern' => 'Modern',
+            'pop' => 'Pop',
+            'urban' => 'Urban',
+            'vintagephotographs' => 'Vintage Photographs',
+            ))}}
         </div>
 
         <div class="form-group">
