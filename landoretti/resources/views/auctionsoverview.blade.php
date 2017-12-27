@@ -31,7 +31,11 @@
         </ul>
         <h3>Era</h3>
         <ul class="style">
-            <li></li>
+            <li><a href="{{url("auctions/era/prewar")}}">Pre-war</a></li>
+            <li><a href="{{url("auctions/era/1940to1950")}}">1940s-1950s</a></li>
+            <li><a href="{{url("auctions/era/1960to1980")}}">1960s-1980s</a></li>
+            <li><a href="{{url("auctions/era/1990topresent")}}">1990s-Present</a></li>
+
         </ul>
         <h3>Endings</h3>
         <ul class="style">

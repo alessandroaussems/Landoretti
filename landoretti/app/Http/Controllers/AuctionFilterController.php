@@ -56,4 +56,32 @@ class AuctionFilterController extends Controller
             ->get();
         return view("auctionsoverview")->with('auctions',$auctions);
     }
+    public function era($era)
+    {
+        if($era=="prewar")
+        {
+            $min=1900;
+            $max=1940;
+        }
+        if($era=="1940to1950")
+        {
+            $min=1940;
+            $max=1960;
+        }
+        if($era=="1960to1980")
+        {
+            $min=1960;
+            $max=1990;
+        }
+        if($era=="1990topresent")
+        {
+            $min=1990;
+            $max=date("Y");
+        }
+        $auctions = Auction::where("isactive",1)
+            ->where('year',  ">=",  $min)
+            ->where('year',  "<=",  $max)
+            ->get();
+        return view("auctionsoverview")->with('auctions',$auctions);
+    }
 }
