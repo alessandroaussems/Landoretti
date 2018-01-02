@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use App\Bidding;
 use Carbon\Carbon;
+use Intervention\Image\Facades\Image;
 
 class AuctionController extends Controller
 {
@@ -85,7 +86,8 @@ class AuctionController extends Controller
             }
             $image = $request->file('image');
             $photoName = Input::get('title') . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('img/'), $photoName);
+            $path=public_path('img/auctions/'.$photoName);
+            Image::make($image->getRealPath())->resize(500, 500)->save($path);
 
             $auction = new Auction();
             $auction->title = Input::get('title');

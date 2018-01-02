@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-sm-4 imagecol"><img src="{{asset("/img")."/".$auction->photo1}}" alt="{{$auction->title}}" title="{{$auction->title}}"></div>
+        <div class="col-sm-4 imagecol"><img src="{{asset("/img/auctions")."/".$auction->photo1}}" alt="{{$auction->title}}" title="{{$auction->title}}"></div>
         <div class="col-sm-4">
             <h1>{{$auction->title}}</h1>
             <p><strong>Style:</strong> {{$auction->style}}</p>

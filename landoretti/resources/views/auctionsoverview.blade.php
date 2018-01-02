@@ -12,7 +12,7 @@
             $length = $end->diffInDays($now);
             ?>
                 <div class="col-sm-4 auction">
-                    <img class="auctionimage" src="{{asset('/img').'/'.$value->photo1}}" alt="{{$value->title}}" title="{{$value->title}}"><br>
+                    <img class="auctionimage" src="{{asset('/img/auctions').'/'.$value->photo1}}" alt="{{$value->title}}" title="{{$value->title}}"><br>
                     <h3>{{$value->title}}</h3><br>
                     <p><strong>Days to go: </strong>{{$length}}</p><br>
                     <a href="./auctions/{{$value->id}}" class="btn btn-primary">More information!</a>
