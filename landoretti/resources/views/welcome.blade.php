@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <h1 id="welcome">{{ __('messages.welcome') }}</h1>
     <div id="carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carousel" data-slide-to="0"></li>
