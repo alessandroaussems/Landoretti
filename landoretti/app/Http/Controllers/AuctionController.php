@@ -16,6 +16,7 @@ use Intervention\Image\Facades\Image;
 use App\User;
 use App\Message;
 
+
 class AuctionController extends Controller
 {
     /**
@@ -105,7 +106,7 @@ class AuctionController extends Controller
             $auction->minimumestimatedprice = Input::get('minimumestimatedprice');
             $auction->maximumestimatedprice = Input::get('maximumestimatedprice');
             $auction->buyoutprice = Input::get('buyoutprice');
-            $auction->enddate = Input::get('enddate');
+            $auction->enddate = date("Y-m-d", strtotime(Input::get('enddate')));
             $auction->conditionsaccepted= $conditionsaccepted;
             $auction->userid = Auth::id();
             $auction->isactive = 1;
@@ -224,7 +225,7 @@ class AuctionController extends Controller
             $auction->minimumestimatedprice = Input::get('minimumestimatedprice');
             $auction->maximumestimatedprice = Input::get('maximumestimatedprice');
             $auction->buyoutprice = Input::get('buyoutprice');
-            $auction->enddate = Input::get('enddate');
+            $auction->enddate = date("Y-m-d", strtotime(Input::get('enddate')));
             $auction->userid = Auth::id();
             $auction->save();
             // redirect

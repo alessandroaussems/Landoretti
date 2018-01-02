@@ -82,7 +82,7 @@
 
         <div class="form-group">
             {{ Form::label('enddate', 'Enddate',array('class' => 'required'))  }}
-            {{ Form::text('enddate', Input::old('enddate'), array('class' => 'form-control')) }}
+            {{ Form::date('enddate', Input::old('enddate'), array('class' => 'form-control')) }}
         </div>
 
 
