@@ -14,7 +14,7 @@
         <tbody>
         @foreach($auctions as $key => $value)
             <tr>
-                <td><img class="auctionimage" src="{{asset('/img').'/'.$value->photo1}}" alt="{{$value->title}}" title="{{$value->title}}"></td>
+                <td><img class="auctionimage" src="{{asset('/img/auctions').'/'.$value->photo1}}" alt="{{$value->title}}" title="{{$value->title}}"></td>
                 <td>{{$value->title}}</td>
                 <td>{{$value->status}}</td>
                 <td>
