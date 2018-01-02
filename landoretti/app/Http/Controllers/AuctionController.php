@@ -108,6 +108,7 @@ class AuctionController extends Controller
             $auction->enddate = Input::get('enddate');
             $auction->conditionsaccepted= $conditionsaccepted;
             $auction->userid = Auth::id();
+            $auction->isactive = 1;
             $auction->status="active";
             $auction->save();
             // redirect
