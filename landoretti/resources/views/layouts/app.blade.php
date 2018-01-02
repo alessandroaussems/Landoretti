@@ -46,8 +46,18 @@
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
+                            @if(Config::get('app.locale')=="fr")
+                            <li><a href="{{ url("language/en") }}"><img src="{{asset('img/lang/united-kingdom.png')}}" alt="Change language to English"></a></li>
+                            @else
+                            <li><a href="{{ url("language/fr") }}"><img src="{{asset('img/lang/france.png')}}" alt="Change language to French"></a></li>
+                            @endif
                         @else
                                 <li><a href="{{ url('auctions') }}">Auctions</a></li>
+                            @if(Config::get('app.locale')=="fr")
+                                <li><a href="{{ url("language/en") }}"><img src="{{asset('img/lang/united-kingdom.png')}}" alt="Change language to English"></a></li>
+                            @else
+                                <li><a href="{{ url("language/fr") }}"><img src="{{asset('img/lang/france.png')}}" alt="Change language to French"></a></li>
+                            @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>

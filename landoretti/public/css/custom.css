@@ -16,4 +16,8 @@ body {
   display: block;
   margin-left: 325px; }
 
+#welcome {
+  width: 100%;
+  text-align: center; }
+
 /*# sourceMappingURL=custom.css.map */
