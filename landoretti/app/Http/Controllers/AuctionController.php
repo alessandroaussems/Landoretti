@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Bidding;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
+use App\User;
+use App\Message;
 
 class AuctionController extends Controller
 {
@@ -127,6 +129,10 @@ class AuctionController extends Controller
             'id' => $id,
             'isactive' => 1,
         ])->first();
+        if(count($auction)==0)
+        {
+            abort(404);
+        }
         $biddings=Bidding::
         join('users', 'userid', '=', 'users.id')
             ->select('users.name', 'biddings.biddingprice')
@@ -259,6 +265,20 @@ class AuctionController extends Controller
             'isactive' => 1,
         ])->first();
         $auction->isactive=0;
+        $auction->status="sold";
+
+        $user=Auth::id();
+        $userfromauction=User::where("id",$auction->userid)->get();
+        $messagetoauctionowner = new Message();
+        $messagetoauctionowner->message = "Een gebruiker heeft uw kunstwerk " . $auction->title . " direct gekocht!";
+        $messagetoauctionowner->userid=$userfromauction[0]->id;
+        $messagetoauctionowner->save();
+
+        $messagetobuyer= new Message();
+        $messagetobuyer->message = "Proficiat uw heeft het kunstwerk ". $auction->title . " gekocht!";
+        $messagetobuyer->userid=$user;
+        $messagetobuyer->save();
+
         $auction->save();
         return view("thankyou");
     }
