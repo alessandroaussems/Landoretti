@@ -44,15 +44,15 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">{{ __('messages.login') }}</a></li>
+                            <li><a href="{{ route('register') }}">{{ __('messages.register') }}</a></li>
                             @if(Config::get('app.locale')=="fr")
                             <li><a href="{{ url("language/en") }}"><img src="{{asset('img/lang/united-kingdom.png')}}" alt="Change language to English"></a></li>
                             @else
                             <li><a href="{{ url("language/fr") }}"><img src="{{asset('img/lang/france.png')}}" alt="Change language to French"></a></li>
                             @endif
                         @else
-                                <li><a href="{{ url('auctions') }}">Auctions</a></li>
+                                <li><a href="{{ url('auctions') }}">{{ __('messages.auctions') }}</a></li>
                             @if(Config::get('app.locale')=="fr")
                                 <li><a href="{{ url("language/en") }}"><img src="{{asset('img/lang/united-kingdom.png')}}" alt="Change language to English"></a></li>
                             @else
@@ -65,22 +65,22 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{url("messages")}}">Messages</a>
+                                        <a href="{{url("messages")}}">{{ __('messages.message') }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{url("starredauctions")}}">Starred Auctions</a>
+                                        <a href="{{url("starredauctions")}}">{{ __('messages.starred') }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{route("myauctions")}}">My Auctions</a>
+                                        <a href="{{route("myauctions")}}">{{ __('messages.mine') }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{url("auctions/create")}}">Create Auction</a>
+                                        <a href="{{url("auctions/create")}}">{{ __('messages.create') }}</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            {{ __('messages.logout') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
