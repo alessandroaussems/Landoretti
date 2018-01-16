@@ -20,6 +20,41 @@
                 <img src="{{asset("img/slides/slide3.jpg")}}" alt="Slide 3">
             </div>
         </div>
+        <section id="service">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">How does it work?</h2>
+                        <hr class="my-4">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 text-center">
+                        <div class="service-box mt-5 mx-auto">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            <h3 class="mb-3">Sign up</h3>
+                            <p class="text-muted mb-0">With a pressure sensor Restaumator knows when a glass is empty.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 text-center">
+                        <div class="service-box mt-5 mx-auto">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            <h3 class="mb-3">Make deals</h3>
+                            <p class="text-muted mb-0">Customers want to pay? Restaumator sends the waiter a notification</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 text-center">
+                        <div class="service-box mt-5 mx-auto">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            <h3 class="mb-3">Everyone happy!</h3>
+                            <p class="text-muted mb-0">Customers want to pay? Restaumator sends the waiter a notification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <div class="container text-center">
             <hr />
             <div class="row">
