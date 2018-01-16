@@ -23,18 +23,18 @@ Route::get('language/{lang}', function ($lang) {
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-Route::resource('auctions', 'AuctionController');
-Route::get('/myauctions', 'AuctionController@myauctions')->name('myauctions');
-Route::get('auctionbuynow/{id}',"AuctionController@buyNow");
+Route::resource('auctions', 'AuctionController')->middleware('auth');;
+Route::get('/myauctions', 'AuctionController@myauctions')->name('myauctions')->middleware('auth');
+Route::get('auctionbuynow/{id}',"AuctionController@buyNow")->middleware('auth');
 
-Route::get('starredauctions','StarredAuctionController@showstarredAuctions');
-Route::get('auctions/{id}/star','StarredAuctionController@star');
-Route::get('auctions/{id}/unstar','StarredAuctionController@unstar');
+Route::get('starredauctions','StarredAuctionController@showstarredAuctions')->middleware('auth');;
+Route::get('auctions/{id}/star','StarredAuctionController@star')->middleware('auth');;
+Route::get('auctions/{id}/unstar','StarredAuctionController@unstar')->middleware('auth');;
 
-Route::get('auctionbidding/{id}',"BiddingController@showbiddingForm");
-Route::post('addbidding',"BiddingController@doBidding");
+Route::get('auctionbidding/{id}',"BiddingController@showbiddingForm")->middleware('auth');;
+Route::post('addbidding',"BiddingController@doBidding")->middleware('auth');;
 
-Route::get("/messages","MessageController@index");
+Route::get("/messages","MessageController@index")->middleware('auth');;
 
 Route::get("/auctions/price/{category}","AuctionFilterController@price");
 Route::get("/auctions/style/{stylesort}","AuctionFilterController@style");

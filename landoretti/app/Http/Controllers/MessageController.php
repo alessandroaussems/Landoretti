@@ -8,10 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     public function index()
     {
         $messages = Message::where("userid",Auth::id())->orderBy("created_at","DESC")->get();

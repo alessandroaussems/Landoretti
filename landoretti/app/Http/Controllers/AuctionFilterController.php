@@ -8,10 +8,6 @@ use App\Auction;
 
 class AuctionFilterController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     public function price($category)
     {
         if($category=="upto5000")
