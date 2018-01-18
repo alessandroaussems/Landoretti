@@ -15,13 +15,13 @@ class BiddingController extends Controller
 {
     public function showbiddingForm($id)
     {
-/*        $alreadybidding=Bidding::where("userid",Auth::id())->where("auctionid",$id)->first();
-        if(count($alreadybidding)!=0)
-        {
-            abort(404);
-        }
-        $auction = Auction::where("id",$id)->first();
-        return view("addbidding")->with('auctionid',$auction->id);*/
+        /*  $alreadybidding=Bidding::where("userid",Auth::id())->where("auctionid",$id)->first();
+          if(count($alreadybidding)!=0)
+          {
+              abort(404);
+          }*/
+          $auction = Auction::where("id",$id)->first();
+          return view("addbidding")->with('auctionid',$auction->id);
     }
     public function doBidding()
     {

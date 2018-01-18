@@ -19,6 +19,11 @@ use App\Message;
 
 class AuctionController extends Controller
 {
+    public function __construct()
+    {
+        //$this->middleware('auth');
+        $this->middleware('auth', ['except' => ['index','show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -51,19 +56,19 @@ class AuctionController extends Controller
         // validate
         // read more on validation at http://laravel.com/docs/validation
         $rules = array(
-            'title'      => 'required',
-            'style'     => 'required' ,
-            'year'       => 'required',
+            'title'      => 'required|max:255',
+            'style'     => 'required|max:255' ,
+            'year'       => 'required|max:4',
             'description'=> 'required',
-            'width' => 'required',
-            'height' => 'required',
-            'depth' => 'required',
+            'width' => 'required|numeric',
+            'height' => 'required|numeric',
+            'depth' => 'required|numeric',
             'condition' => 'required',
-            'origin' => 'required',
+            'origin' => 'required|max:255',
             'image'      => 'required|image',
-            'minimumestimatedprice' => 'required',
-            'maximumestimatedprice' => 'required',
-            'buyoutprice' => 'required',
+            'minimumestimatedprice' => 'required|numeric',
+            'maximumestimatedprice' => 'required|numeric',
+            'buyoutprice' => 'required|numeric',
             'enddate' => 'required',
             'conditionsaccepted' => 'required'
         );
@@ -183,20 +188,21 @@ class AuctionController extends Controller
         // validate
         // read more on validation at http://laravel.com/docs/validation
         $rules = array(
-            'title'      => 'required',
-            'style'     => 'required' ,
-            'year'       => 'required',
+            'title'      => 'required|max:255',
+            'style'     => 'required|max:255' ,
+            'year'       => 'required|max:4',
             'description'=> 'required',
-            'width' => 'required',
-            'height' => 'required',
-            'depth' => 'required',
+            'width' => 'required|numeric',
+            'height' => 'required|numeric',
+            'depth' => 'required|numeric',
             'condition' => 'required',
-            'origin' => 'required',
+            'origin' => 'required|max:255',
             'image'      => 'required|image',
-            'minimumestimatedprice' => 'required',
-            'maximumestimatedprice' => 'required',
-            'buyoutprice' => 'required',
+            'minimumestimatedprice' => 'required|numeric',
+            'maximumestimatedprice' => 'required|numeric',
+            'buyoutprice' => 'required|numeric',
             'enddate' => 'required',
+            'conditionsaccepted' => 'required'
         );
         $validator = Validator::make(Input::all(), $rules);
 

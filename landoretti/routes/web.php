@@ -23,7 +23,7 @@ Route::get('language/{lang}', function ($lang) {
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-Route::resource('auctions', 'AuctionController')->middleware('auth');;
+Route::resource('auctions', 'AuctionController');
 Route::get('/myauctions', 'AuctionController@myauctions')->name('myauctions')->middleware('auth');
 Route::get('auctionbuynow/{id}',"AuctionController@buyNow")->middleware('auth');
 

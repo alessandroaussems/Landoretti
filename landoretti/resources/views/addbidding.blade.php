@@ -10,7 +10,7 @@
 
         {{ Form::hidden('auctionid', $auctionid) }}
 
-        <div class="form-group">
+        <div class="form-group topfield">
             {{ Form::label('bidding', 'Your bidding:',array('class' => 'required'))  }}
             {{ Form::text('bidding', Input::old('bidding'), array('class' => 'form-control')) }}
         </div>
