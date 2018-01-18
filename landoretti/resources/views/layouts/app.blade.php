@@ -4,6 +4,36 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="keywords" content="Landoretti,Art,Auctions,Biddings"/>
+    <meta name="description" content="Landoretti: Website where you can add auctions of your precious artworks. People can sign up and add a bidding to buy your item"/>
+    <meta name="subject" content="Landoretti: Art">
+    <meta name="language" content="EN">
+    <meta name="robots" content="index" />
+    <meta name="topic" content="Landoretti: Art">
+    <meta name="summary" content="Landoretti: Art">
+    <meta name="author" content="Alessandro Aussems">
+    <meta name="publisher" content="Alessandro Aussems">
+    <meta name="url" content="https://landoretti.alessandro.aussems.mtantwerp.eu/">
+    <meta name="identifier-URL" content="https://landoretti.alessandro.aussems.mtantwerp.eu/">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <meta property="og:title" content="Landoretti: Art"/>
+    <meta property="og:site_name" content="Landoretti: Art" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://landoretti.alessandro.aussems.mtantwerp.eu/"/>
+    <meta property="og:image" content="https://landoretti.alessandro.aussems.mtantwerp.eu/logo.png"/>
+    <meta property="og:description" content="Landoretti: Website where you can add auctions of your precious artworks. People can sign up and add a bidding to buy your item"/>
+
+
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="CodePolice: Plagiarism checker" />
+    <meta property="twitter:description" content="Landoretti: Website where you can add auctions of your precious artworks. People can sign up and add a bidding to buy your item" />
+    <meta property="twitter:image" content="https://landoretti.alessandro.aussems.mtantwerp.eu/logo.png" />
+    <meta property="twitter:url" content="https://landoretti.alessandro.aussems.mtantwerp.eu/" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -13,6 +43,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+
+    <link rel="canonical" href="https://landoretti.alessandro.aussems.mtantwerp.eu/" />
 </head>
 <body>
     <div id="app">

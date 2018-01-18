@@ -55,7 +55,7 @@
                 </div>
             </div>
         </section>
-        <h1 id="popular">{{ __('messages.popular') }}</h1>
+        <h2 id="popular">{{ __('messages.popular') }}</h2>
         <div id="carousel" class="carousel bottom slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carousel" data-slide-to="0" class="active"></li>
