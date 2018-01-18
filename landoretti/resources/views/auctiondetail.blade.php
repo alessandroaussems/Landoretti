@@ -4,12 +4,14 @@
     <div class="row">
         <div class="col-sm-4 imagecol"><img src="{{asset("/img/auctions")."/".$auction->photo1}}" alt="{{$auction->title}}" title="{{$auction->title}}"></div>
         <div class="col-sm-4">
-            @if($alreadystarred==true)
-                <a href="./{{$auction->id}}/unstar" class="btn btn-primary starbutton"><span class="glyphicon glyphicon-star-empty star"></span></a>
-            @else
-                <a href="./{{$auction->id}}/star" class="btn btn-primary starbutton"><span class="glyphicon glyphicon-star star"></span></a>
-            @endif
-            <h1>{{$auction->title}}</h1>
+            <div class="headerauction">
+                <h1>{{$auction->title}}</h1>
+                @if($alreadystarred==true)
+                    <a href="./{{$auction->id}}/unstar" class="btn btn-primary starbutton"><span class="glyphicon glyphicon-star-empty star"></span></a>
+                @else
+                    <a href="./{{$auction->id}}/star" class="btn btn-primary starbutton"><span class="glyphicon glyphicon-star star"></span></a>
+                @endif
+            </div>
             <p><strong>Style:</strong> {{$auction->style}}</p>
             <p><strong>Year:</strong> {{$auction->year}}</p>
             <p><strong>Width:</strong> {{$auction->width}}</p>

@@ -101,9 +101,7 @@ body
 }
 .starbutton
 {
-  position: absolute;
-  top: 3.5%;
-  left: 50%;
+  margin-bottom: 11px;
   background-color: yellow;
   border-color: yellow;
   color: black;
@@ -113,4 +111,8 @@ body
   background-color: black;
   color: yellow;
   border-color: black;
+}
+.headerauction > *
+{
+  display: inline-block;
 }

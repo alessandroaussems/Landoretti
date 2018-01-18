@@ -37,13 +37,13 @@
                         <li>
                             <a href="{{url("starredauctions")}}">{{ __('messages.starred') }}</a>
                         </li>
-                        <li>
-                            <a href="#">Profile</a>
-                        </li>
                         @guest
                             <li><a href="{{ route('login') }}">{{ __('messages.login') }}</a></li>
                             <li><a href="{{ route('register') }}">{{ __('messages.register') }}</a></li>
                         @else
+                            <li>
+                                <a href="#"><span class="glyphicon glyphicon-user"></span> {{Auth::user()->name}}</a>
+                            </li>
                         <li>
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();
