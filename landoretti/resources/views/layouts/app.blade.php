@@ -90,6 +90,14 @@
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                        <li class="search">
+                            {{ Form::open(['url' => 'search','class'=>'form-inline'])}}
+                            <div class="form-group">
+                                {{ Form::text('searchquery', Input::old("searchquery"), array('placeholder'=>'Search...','class' => 'form-control')) }}
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+                            </div>
+                            {{ Form::close() }}
+                        </li>
                         @if(Config::get('app.locale')=="fr")
                             <li><a href="{{ url("language/en") }}"><img src="{{asset('img/lang/united-kingdom.png')}}" alt="Change language to English"></a></li>
                         @else
