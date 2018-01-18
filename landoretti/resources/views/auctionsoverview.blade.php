@@ -16,7 +16,7 @@
                     <div class="auctiontext">
                     <h3>{{$value->title}}</h3><br>
                     <p><strong>Days to go: </strong>{{$length}}</p><br>
-                    <a href="./auctions/{{$value->id}}" class="btn btn-primary">More information!</a>
+                    <a href="{{url("auctions/")."/".$value->id}}" class="btn btn-primary">More information!</a>
                     </div>
                 </div>
         @endforeach
