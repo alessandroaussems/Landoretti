@@ -266,7 +266,6 @@ class AuctionController extends Controller
     }
     public function buyNow($id)
     {
-        // delete
         $auction = Auction::where([
             'id' => $id,
             'isactive' => 1,
@@ -277,14 +276,26 @@ class AuctionController extends Controller
         $user=Auth::id();
         $userfromauction=User::where("id",$auction->userid)->get();
         $messagetoauctionowner = new Message();
-        $messagetoauctionowner->message = "Een gebruiker heeft uw kunstwerk " . $auction->title . " direct gekocht!";
+        $messagetoauctionowner->message = "A user has bought your artwork: " . $auction->title . " immediately!";
         $messagetoauctionowner->userid=$userfromauction[0]->id;
         $messagetoauctionowner->save();
 
         $messagetobuyer= new Message();
-        $messagetobuyer->message = "Proficiat uw heeft het kunstwerk ". $auction->title . " gekocht!";
+        $messagetobuyer->message ="Congrats you have bought the artwork: ". $auction->title . "!";
         $messagetobuyer->userid=$user;
         $messagetobuyer->save();
+
+        $biddingslosers=Bidding::where("auctionid",$id)->get();
+        foreach ($biddingslosers as $biddingloser => $loser)
+        {
+            if($loser->userid!=$user && $loser->userid!=$userfromauction[0]->id)
+            {
+                $messagetoloser= new Message();
+                $messagetoloser->message = "No! Someone has bought the artwork: ". $auction->title . ", and it was NOT you!";
+                $messagetoloser->userid=$loser->userid;
+                $messagetoloser->save();
+            }
+        }
 
         $auction->save();
         return view("thankyou");
