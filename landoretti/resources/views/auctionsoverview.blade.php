@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @if(Request::url() === 'http://landoretti.local/search')
+        <p class="searchedfor">You searched for: {{$searchquery}}</p>
+    @endif
     @if(count($auctions)==0)
         <h3 class="none">There are no auctions here!</h3>
     @endif

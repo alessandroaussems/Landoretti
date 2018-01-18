@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Auction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -9,6 +10,7 @@ class SearchController extends Controller
 {
     public function search()
     {
-        echo Input::get("searchquery");
+        $auctions=Auction::where("title", 'LIKE', '%'.Input::get("searchquery").'%')->get();
+        return view("auctionsoverview")->with('auctions',$auctions)->with("searchquery",Input::get("searchquery"));
     }
 }
