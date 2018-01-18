@@ -49,21 +49,32 @@ class DisableAuctionsWhenExpired extends Command
             {
                 $value->isactive=0;
                 $biddings=Bidding::where("auctionid",$value->id)->orderBy('biddingprice', 'DESC')->get();
-                echo $biddings;
                 if(count($biddings) > 0)
                 {
-                    echo "TR";
                     $userwithhighestbidding=User::where("id",$biddings[0]->userid)->get();
                     $userfromauction=User::where("id",$value->userid)->get();
                     $messagetoauctionowner = new Message();
-                    $messagetoauctionowner->message = "Een gebruiker heeft uw kunstwerk " . $value->title . " gekocht!";
+                    $messagetoauctionowner->message = "A user has bought your artwork: " . $value->title . "!";
                     $messagetoauctionowner->userid=$userfromauction[0]->id;
                     $messagetoauctionowner->save();
 
+
                     $messagetohighestbidder= new Message();
-                    $messagetohighestbidder->message = "Proficiat uw heeft het kunstwerk ". $value->title . " gekocht!";
+                    $messagetohighestbidder->message = "Congrats you have bought the artwork: ". $value->title . "!";
                     $messagetohighestbidder->userid=$userwithhighestbidding[0]->id;
                     $messagetohighestbidder->save();
+
+                    $biddingslosers=Bidding::where("auctionid",$value->id)->get();
+                    foreach ($biddingslosers as $biddingloser => $loser)
+                    {
+                        if($loser->userid!=$userwithhighestbidding[0]->id && $loser->userid!=$value->userid)
+                        {
+                            $messagetoloser= new Message();
+                            $messagetoloser->message = "No! Someone has bought the artwork: ". $value->title . ", and it was NOT you!";
+                            $messagetoloser->userid=$loser->userid;
+                            $messagetoloser->save();
+                        }
+                    }
 
                     $value->status="sold";
 
@@ -72,7 +83,7 @@ class DisableAuctionsWhenExpired extends Command
                 {
                     $userfromauction=User::where("id",$value->userid)->get();
                     $messagetoauctionowner = new Message();
-                    $messagetoauctionowner->message = "Uw veiling " . $value->title . " is verlopen! Niemand heeft ze gekocht!";
+                    $messagetoauctionowner->message = "Your auction: " . $value->title . " is expired! Nobody bought it!";
                     $messagetoauctionowner->userid=$userfromauction[0]->id;
                     $messagetoauctionowner->save();
 
