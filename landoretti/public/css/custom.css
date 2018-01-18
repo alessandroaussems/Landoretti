@@ -16,6 +16,7 @@ body {
   position: absolute; }
 
 .auction {
+  display: inline-block;
   position: relative;
   text-align: center;
   color: white;
@@ -43,7 +44,7 @@ body {
   width: 90%;
   height: auto; }
 
-.glyphicon {
+.glyphiconhome {
   font-size: 5em; }
 
 .top {
@@ -75,5 +76,21 @@ body {
   color: red;
   background-color: #F2DEDE;
   list-style-type: none; }
+
+.star {
+  font-size: 2em; }
+
+.starbutton {
+  position: absolute;
+  top: 3.5%;
+  left: 50%;
+  background-color: yellow;
+  border-color: yellow;
+  color: black; }
+
+.starbutton:hover {
+  background-color: black;
+  color: yellow;
+  border-color: black; }
 
 /*# sourceMappingURL=custom.css.map */

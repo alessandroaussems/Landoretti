@@ -202,7 +202,6 @@ class AuctionController extends Controller
             'maximumestimatedprice' => 'required|numeric',
             'buyoutprice' => 'required|numeric',
             'enddate' => 'required',
-            'conditionsaccepted' => 'required'
         );
         $validator = Validator::make(Input::all(), $rules);
 
@@ -215,7 +214,7 @@ class AuctionController extends Controller
         else {
             $image = $request->file('image');
             $photoName = Input::get('title') . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('img/'), $photoName);
+            $image->move(public_path('img/auctions/'), $photoName);
 
             $auction = Auction::find($id);
             $auction->title = Input::get('title');

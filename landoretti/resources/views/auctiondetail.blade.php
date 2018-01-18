@@ -4,6 +4,11 @@
     <div class="row">
         <div class="col-sm-4 imagecol"><img src="{{asset("/img/auctions")."/".$auction->photo1}}" alt="{{$auction->title}}" title="{{$auction->title}}"></div>
         <div class="col-sm-4">
+            @if($alreadystarred==true)
+                <a href="./{{$auction->id}}/unstar" class="btn btn-primary starbutton"><span class="glyphicon glyphicon-star-empty star"></span></a>
+            @else
+                <a href="./{{$auction->id}}/star" class="btn btn-primary starbutton"><span class="glyphicon glyphicon-star star"></span></a>
+            @endif
             <h1>{{$auction->title}}</h1>
             <p><strong>Style:</strong> {{$auction->style}}</p>
             <p><strong>Year:</strong> {{$auction->year}}</p>
@@ -17,11 +22,6 @@
             <p><strong>Maxmimumprice:</strong> {{$auction->maximumestimatedprice}}</p>
             <p><strong>Buyoutprice:</strong> {{$auction->buyoutprice}}</p>
             <p><strong>Enddate:</strong> {{$auction->enddate}}</p>
-            @if($alreadystarred==true)
-                <a href="./{{$auction->id}}/unstar" class="btn btn-success">Unstar!</a>
-            @else
-            <a href="./{{$auction->id}}/star" class="btn btn-success">Star!</a>
-            @endif
             <a href="../auctionbidding/{{$auction->id}}" class="btn btn-primary">Bid!</a>
             <a href="../auctionbuynow/{{$auction->id}}" class="btn btn-primary">BUY NOW!</a>
         </div>
