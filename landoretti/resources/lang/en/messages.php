@@ -8,7 +8,9 @@ return [
     'starred' => 'Starred Auctions',
     'mine' => 'My Auctions',
     'create' => 'Create Auction',
-    'logout' => 'Logout'
+    'logout' => 'Logout',
+    'working' => 'How does it work?',
+    'popular' => "Most popular this week."
 ];
 
 ?>

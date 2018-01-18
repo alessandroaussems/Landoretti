@@ -8,7 +8,9 @@ return [
     'starred' => 'Les enchères favoris',
     'mine' => 'Mes enchères',
     'create' => 'Création d\'enchères',
-    'logout' => 'Déconnecter'
+    'logout' => 'Déconnecter',
+    'working' => 'Comment ça marche?',
+    'popular' => "Le plus populaire cette semaine."
 ];
 ?>
 

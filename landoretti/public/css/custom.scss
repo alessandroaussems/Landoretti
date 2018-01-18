@@ -1,5 +1,7 @@
+$primary: #FFFF;
 body
 {
+  background-color: $primary;
   overflow-x: hidden;
 }
 .auctionimage
@@ -21,7 +23,7 @@ body
   display: block;
   margin-left: 325px;
 }
-#welcome
+#popular
 {
   width: 100%;
   text-align: center;
@@ -40,4 +42,42 @@ body
 }
 .glyphicon {
   font-size: 5em;
+}
+.top
+{
+  width: 100% !important;
+}
+.bottom
+{
+  width: 50% !important;
+  height: auto !important;
+}
+.bottom > .carousel-inner
+{
+ height: auto !important;
+}
+.create
+{
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.none
+{
+  width: 100%;
+  text-align: center;
+}
+.center
+{
+  width: 100%;
+  text-align: center;
+}
+.topfield
+{
+  margin-top: 20px;
+}
+.errors
+{
+  color: red;
+  background-color: #F2DEDE;
+  list-style-type: none;
 }

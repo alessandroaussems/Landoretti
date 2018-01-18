@@ -7,12 +7,7 @@
 
         {{ Form::open(['url' => 'auctions','files' => true])}}
 
-        <div class="form-group">
-            {{ Form::label('title', 'Title',array('class' => 'required'))  }}
-            {{ Form::text('title', Input::old('title'), array('class' => 'form-control')) }}
-        </div>
-
-        <div class="form-group">
+        <div class="form-group topfield">
             {{ Form::label('style', 'Style',array('class' => 'required'))  }}<br>
             {{Form::select('style', array(
             'abstract' => 'Abstract',
@@ -28,6 +23,11 @@
             'urban' => 'Urban',
             'vintagephotographs' => 'Vintage Photographs',
             ))}}
+        </div>
+
+        <div class="form-group">
+            {{ Form::label('title', 'Title',array('class' => 'required'))  }}
+            {{ Form::text('title', Input::old('title'), array('class' => 'form-control')) }}
         </div>
 
         <div class="form-group">

@@ -2,7 +2,7 @@
 
 @section('content')
     @if(count($auctions)==0)
-        <p>There are no auctions here!.</p>
+        <h3 class="none">There are no auctions here!</h3>
     @endif
     <div class="row">
         @foreach($auctions as $key => $value)

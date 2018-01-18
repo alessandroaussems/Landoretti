@@ -164,6 +164,10 @@ class AuctionController extends Controller
             'isactive' => 1,
             'userid' => Auth::id()
         ])->first();
+        if(count($auction)==0)
+        {
+            abort(404);
+        }
         return view("editauction")->with('auction',$auction);
     }
 
