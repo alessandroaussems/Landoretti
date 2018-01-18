@@ -11,11 +11,13 @@
             $now = \Carbon\Carbon::today();
             $length = $end->diffInDays($now);
             ?>
-                <div class="col-sm-4 auction">
+                <div class="auction">
                     <img class="auctionimage" src="{{asset('/img/auctions').'/'.$value->photo1}}" alt="{{$value->title}}" title="{{$value->title}}"><br>
+                    <div class="auctiontext">
                     <h3>{{$value->title}}</h3><br>
                     <p><strong>Days to go: </strong>{{$length}}</p><br>
                     <a href="./auctions/{{$value->id}}" class="btn btn-primary">More information!</a>
+                    </div>
                 </div>
         @endforeach
     </div>

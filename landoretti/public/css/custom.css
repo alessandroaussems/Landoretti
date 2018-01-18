@@ -3,12 +3,23 @@ body {
   overflow-x: hidden; }
 
 .auctionimage {
-  width: 200px; }
+  width: 500px;
+  height: 500px; }
+
+.auctionimagetable {
+  width: 100px;
+  height: 100px; }
+
+.auctiontext {
+  width: 100%;
+  bottom: 5%;
+  position: absolute; }
 
 .auction {
+  position: relative;
   text-align: center;
-  border: 1px solid black;
-  padding-bottom: 5px; }
+  color: white;
+  width: 500px; }
 
 .imagecol {
   margin-left: 375px; }

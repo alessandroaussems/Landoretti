@@ -9,7 +9,7 @@
         <tbody>
         @foreach($auctions as $key => $value)
             <tr>
-                <td><img class="auctionimage" src="{{asset('/img/auctions').'/'.$value->photo1}}" alt="{{$value->title}}" title="{{$value->title}}"></td>
+                <td><img class="auctionimagetable" src="{{asset('/img/auctions').'/'.$value->photo1}}" alt="{{$value->title}}" title="{{$value->title}}"></td>
                 <td><a href="./auctions/{{$value->id}}">{{$value->title}}</a></td>
                 <td>{{$value->status}}</td>
                 <td>
