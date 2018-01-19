@@ -75,7 +75,7 @@ class AuctionFilterController extends Controller
             $min=1990;
             $max=date("Y");
         }
-        $auctions = Auction::where("isactive",1)
+        $auctions = Auction::where("status","active")
             ->where('year',  ">=",  $min)
             ->where('year',  "<=",  $max)
             ->get();
@@ -85,7 +85,7 @@ class AuctionFilterController extends Controller
     {
         if($ending=="thisweek")
         {
-            $auctions = Auction::where("isactive",1)
+            $auctions = Auction::where("status","active")
                 ->where('enddate',  ">=",  Carbon::today())
                 ->where('enddate',  "<=",  Carbon::now()->addDays(7))
                 ->get();
@@ -93,7 +93,7 @@ class AuctionFilterController extends Controller
         }
         if($ending=="purchasenow")
         {
-            $auctions = Auction::where("isactive",1)
+            $auctions = Auction::where("isactive","active")
                 ->where('enddate',  ">=",  Carbon::today())
                 ->where('enddate',  "<=",  Carbon::now()->addDays(1))
                 ->get();

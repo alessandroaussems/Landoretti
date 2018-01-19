@@ -6,7 +6,7 @@
     @endif
     @if(count($auctions)==0)
         <h3 class="none">There are no auctions here!</h3>
-    @endif
+    @else
     <div class="row">
         @foreach($auctions as $key => $value)
             <?php
@@ -23,6 +23,7 @@
                     </div>
                 </div>
         @endforeach
+            @endif
     </div>
     <div class="container text-center">
         <hr />

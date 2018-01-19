@@ -13,9 +13,7 @@
                 <td><a href="./auctions/{{$value->id}}">{{$value->title}}</a></td>
                 <td>{{$value->status}}</td>
                 <td>
-                    @if($value->isactive!="0")
                     <a href="./auctions/{{$value->id}}/edit" class="btn btn-primary pull-left">Edit</a>
-                    @endif
                     {{ Form::open(array('url' => 'auctions/' . $value->id, 'class' =>'delete')) }}
                     {{ Form::hidden('_method', 'DELETE') }}
                     {{ Form::submit('Delete', array('class' => 'btn btn-danger pull-right')) }}

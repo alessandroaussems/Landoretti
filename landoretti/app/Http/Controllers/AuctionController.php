@@ -31,7 +31,7 @@ class AuctionController extends Controller
      */
     public function index()
     {
-        $auctions = Auction::where("isactive",1)->get();
+        $auctions = Auction::where("status","active")->get();
         return view("auctionsoverview")->with('auctions',$auctions);
     }
 
@@ -130,7 +130,7 @@ class AuctionController extends Controller
     {
         $auction = Auction::where([
             'id' => $id,
-            'isactive' => 1,
+            'status' => "active",
         ])->first();
         if(count($auction)==0)
         {
@@ -166,7 +166,6 @@ class AuctionController extends Controller
     {
         $auction = Auction::where([
             'id' => $id,
-            'isactive' => 1,
             'userid' => Auth::id()
         ])->first();
         if(count($auction)==0)
@@ -253,6 +252,7 @@ class AuctionController extends Controller
             'userid' => Auth::id()
         ])->first();
         $auction->isactive=0;
+        $auction->status="expired";
         $auction->save();
         return Redirect::to('myauctions');
     }
@@ -268,9 +268,9 @@ class AuctionController extends Controller
     {
         $auction = Auction::where([
             'id' => $id,
-            'isactive' => 1,
+            'status' => "active",
         ])->first();
-        $auction->isactive=0;
+        $auction->isactive=1;
         $auction->status="sold";
 
         $user=Auth::id();

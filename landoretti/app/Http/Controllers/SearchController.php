@@ -11,7 +11,7 @@ class SearchController extends Controller
     public function search()
     {
         $auctions=Auction::where("title", 'LIKE', '%'.Input::get("searchquery").'%')
-                            ->where("isactive",1)
+                            ->where("status",'active')
                             ->get();
         return view("auctionsoverview")->with('auctions',$auctions)->with("searchquery",Input::get("searchquery"));
     }

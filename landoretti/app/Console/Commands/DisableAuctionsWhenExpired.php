@@ -42,12 +42,11 @@ class DisableAuctionsWhenExpired extends Command
      */
     public function handle()
     {
-        $auctions=Auction::where("isactive",1)->get();
+        $auctions=Auction::where("status","active")->get();
         foreach ($auctions as $key => $value)
         {
             if(Carbon::parse($value->enddate)==Carbon::today())
             {
-                $value->isactive=0;
                 $biddings=Bidding::where("auctionid",$value->id)->orderBy('biddingprice', 'DESC')->get();
                 if(count($biddings) > 0)
                 {

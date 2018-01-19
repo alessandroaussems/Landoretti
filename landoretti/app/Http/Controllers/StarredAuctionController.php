@@ -16,8 +16,11 @@ class StarredAuctionController extends Controller
         $stars = Starred::where("userid",Auth::id())->get();
         foreach ($stars as $key => $value)
         {
-            $auction=Auction::where("id",$value->auctionid)->first();
-            array_push($auctions,$auction);
+            $auction=Auction::where("id",$value->auctionid)->where("status","active")->first();
+            if($auction!=NULL)
+            {
+                array_push($auctions,$auction);
+            }
         }
         return view("auctionsoverview")->with("auctions",$auctions);
 
