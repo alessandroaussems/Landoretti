@@ -58,7 +58,7 @@ class AuctionController extends Controller
         $rules = array(
             'title'      => 'required|max:255',
             'style'     => 'required|max:255' ,
-            'year'       => 'required|max:4|numeric',
+            'year'       => 'required|numeric|digits:4',
             'description'=> 'required',
             'width' => 'required|numeric',
             'height' => 'required|numeric',
@@ -190,7 +190,7 @@ class AuctionController extends Controller
         $rules = array(
             'title'      => 'required|max:255',
             'style'     => 'required|max:255' ,
-            'year'       => 'required|max:4|numeric',
+            'year'       => 'required|numeric|digits:4',
             'description'=> 'required',
             'width' => 'required|numeric',
             'height' => 'required|numeric',
