@@ -18,3 +18,4 @@ Read the [Deploydocument](deploy.md)
 http://www.websiteseocheck.nl/health_check/report/29190/landoretti.alessandro.aussems.mtantwerp.eu
 ### Pagespeed
 ![](_other/screenshots/pagespeed.png)
+##### FINISHED! :checkered_flag:
