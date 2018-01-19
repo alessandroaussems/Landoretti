@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/login</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/register</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/style/abstract</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/style/africanamerican</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/style/asiancontemporary</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/style/conceptual</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/style/contemporary</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/style/emergingartists</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/style/middleeastcontemporary</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/style/minimalism</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/style/modern</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/style/pop</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/style/urban</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/style/vintagephotographs</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/price/upto5000</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/price/5000to10000</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/price/10000to25000</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/price/25000to50000</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/price/50000to100000</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/price/above</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/era/prewar</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/era/1940to1950</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/era/1960to1980</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/era/1990topresent</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/ending/thisweek</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/ending/purchasenow</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/password/reset</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://landoretti.alessandro.aussems.mtantwerp.eu/auctions/2</loc>
+  <lastmod>2018-01-19T12:34:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
