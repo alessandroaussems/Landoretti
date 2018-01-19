@@ -40,7 +40,7 @@ class AuctionFilterController extends Controller
             $min=100000;
             $max=9999999999999999999999999999999999999999999999999999999999999;
         }
-        $auctions = Auction::where("isactive",1)
+        $auctions = Auction::where("status","active")
             ->where('buyoutprice',  ">=",  $min)
             ->where('buyoutprice',  "<=",  $max)
             ->get();
@@ -48,7 +48,7 @@ class AuctionFilterController extends Controller
     }
     public function style($stylesort)
     {
-        $auctions = Auction::where("isactive",1)
+        $auctions = Auction::where("status","active")
             ->where('style',$stylesort)
             ->get();
         return view("auctionsoverview")->with('auctions',$auctions);
@@ -93,7 +93,7 @@ class AuctionFilterController extends Controller
         }
         if($ending=="purchasenow")
         {
-            $auctions = Auction::where("isactive","active")
+            $auctions = Auction::where("status","active")
                 ->where('enddate',  ">=",  Carbon::today())
                 ->where('enddate',  "<=",  Carbon::now()->addDays(1))
                 ->get();
