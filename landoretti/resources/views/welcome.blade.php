@@ -10,13 +10,13 @@
         <div class="carousel-inner">
             <!-- IMAGES ARE OPTIMIZED FOR THE WEB! by: http://optimizilla.com/ -->
             <div class="item active">
-                <img src="{{asset("img/slides/slide1.jpg")}}" alt="Slide 1">
+                <img src="{{asset("img/slides/slide1.jpg")}}" alt="Slide 1" title="Slide 1">
             </div>
             <div class="item">
-                <img src="{{asset("img/slides/slide2.jpg")}}" alt="Slide 2">
+                <img src="{{asset("img/slides/slide2.jpg")}}" alt="Slide 2" title="Slide 1">
             </div>
             <div class="item">
-                <img src="{{asset("img/slides/slide3.jpg")}}" alt="Slide 3">
+                <img src="{{asset("img/slides/slide3.jpg")}}" alt="Slide 3" title="Slide 1">
             </div>
         </div>
     </div>

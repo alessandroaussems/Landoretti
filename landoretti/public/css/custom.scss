@@ -64,6 +64,8 @@ body
 .bottom
 {
   width: 50% !important;
+  margin-left: auto;
+  margin-right: auto;
   height: auto !important;
 }
 .bottom > .carousel-inner
@@ -123,4 +125,9 @@ body
 .searchedfor
 {
   margin-left: 300px;
+}
+.item > img
+{
+  width: 100%;
+  height: auto;
 }
