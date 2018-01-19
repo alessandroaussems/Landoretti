@@ -250,7 +250,6 @@ class AuctionController extends Controller
         // delete
         $auction = Auction::where([
             'id' => $id,
-            'isactive' => 1,
             'userid' => Auth::id()
         ])->first();
         $auction->isactive=0;
@@ -260,7 +259,8 @@ class AuctionController extends Controller
     public function  myauctions()
     {
         $auctions = Auction::where([
-            'userid' => Auth::id()
+            'userid' => Auth::id(),
+            'isactive'=> 1
         ])->get();
         return view("myauctions")->with('auctions',$auctions);
     }
