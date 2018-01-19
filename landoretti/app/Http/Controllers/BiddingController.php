@@ -29,7 +29,7 @@ class BiddingController extends Controller
         // read more on validation at http://laravel.com/docs/validation
         $rules = array(
             'auctionid'      => 'required',
-            'bidding'       => 'required|numeric'
+            'bidding'       => 'required|numeric|min:1'
         );
         $validator = Validator::make(Input::all(), $rules);
 
