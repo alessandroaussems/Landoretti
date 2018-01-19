@@ -7,8 +7,10 @@ Exam Assignment Web Development Period 2 Multimedia Technology
     https://landoretti-alessandroaussems.c9users.io/
 - Cloud9(IDE): <br>
     https://ide.c9.io/alessandroaussems/landoretti
-- Screencast
+- Screencast<br>
     https://youtu.be/qSkUgDpmH74
+- ERD<br>
+    [ERD-Scheme](_other/technical/erd.jpg)
 ### Deploy
 How to deploy this site to a live server?
 Read the [Deploydocument](deploy.md)
